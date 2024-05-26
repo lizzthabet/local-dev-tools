@@ -1,0 +1,24 @@
+{
+  "name": "local-web-server",
+  "version": "0.1.0",
+  "description": "a small web server for local development, no frameworks needed!",
+  "main": "dist/dev-server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/dev-server.js",
+    "test": "npm run build && cp -R dist/ test/testdata && node test/testdata/dev-server.js"
+  },
+  "author": "lizz thabet",
+  "devDependencies": {
+    "@types/node": "^20.11.10",
+    "@types/ws": "^8.5.10",
+    "nodemon": "^3.1.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "ws": "^8.16.0"
+  },
+  "nodemonConfig": {
+    "pls_figure_this_out": "nodemon --watch src --watch test/testdata/public --exec npm test"
+  }
+}
