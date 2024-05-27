@@ -6,13 +6,13 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/dev-server.js",
-    "test": "npm run build && cp -R dist/ test/testdata && node test/testdata/dev-server.js"
+    "test": "npm run build && cp -R dist/ test/testdata && npx nodemon test/testdata/dev-server.js --ext js,html,css"
   },
   "author": "lizz thabet",
   "devDependencies": {
     "@types/node": "^20.11.10",
     "@types/ws": "^8.5.10",
-    "nodemon": "^3.1.0",
+    "nodemon": "^3.1.1",
     "typescript": "^5.3.3"
   },
   "dependencies": {
