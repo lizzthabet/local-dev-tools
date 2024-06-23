@@ -7,14 +7,14 @@ import { join, normalize, extname } from 'path'
 import { Server as WebSocketServer } from 'ws'
 
 // Customize the port you want your server to run on
-const HTTP_PORT = 6700;
+const HTTP_PORT = process.env.PORT || 6700;
 // Customize the port the websocket connection uses
 // Note: update it both here and `client-websocket.ts`
 const WEBSOCKET_PORT = 6800;
 const CLIENT_WEBSOCKET_CODE = readFileSync(join(__dirname,'client-websocket.js'),'utf8');
 // Most static sites have a `public` folder with everything in it.
 // Customize this if it's a different folder.
-const SERVE_CONTENT_FROM = "public"
+const SERVE_CONTENT_FROM = process.env.FOLDER || "public"
 
 // Websocket server (for allowing browser and dev server to have 2-way communication)
 // We don't even need to do anything except create the instance!
